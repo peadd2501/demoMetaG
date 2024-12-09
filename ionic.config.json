@@ -1,0 +1,7 @@
+{
+  "name": "sdk-id-vision",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
