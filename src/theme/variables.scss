@@ -1,2 +1,25 @@
 // For information on how to create your own theme, please see:
 // http://ionicframework.com/docs/theming/
+:root {
+    /* Define los colores de tu tema claro aquí */
+    --ion-background-color: #ffffff;
+    --ion-text-color: #000000;
+    --ion-color-light:white;
+    /* Otros colores de tu tema claro */
+    --purple-primary: #82298F;
+    --purple-secondary: #2b0d30;
+    --orange-primary: #F38301;
+    --orange-secondary: #b35f00;
+
+  }
+  
+  /* Elimina o comenta el bloque para el tema oscuro */
+  @media (prefers-color-scheme: dark) {
+    /* Aquí es donde se definen los estilos oscuros automáticamente */
+    :root {
+      /* Comenta o elimina los estilos de modo oscuro */
+      // --ion-background-color: #000000;
+      // --ion-text-color: #ffffff;
+    }
+  }
+  

@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Test MetaG - SDK
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,12 +9,36 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
     </ion-toolbar>
   </ion-header>
 
   <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <div class="center">
+      <ion-item>
+        <ion-input #DpiInput label="DPI" placeholder="Ingrese DPI"  maxlength="13"
+        [value]="dpiModel"
+        (ionInput)="onInput($event)"
+        ></ion-input>
+      </ion-item>    
+    </div>
+    
+    <ion-button (click)="openSDK()">Abrir MetaG</ion-button>
+    <div [ngClass]="isSuccess === null ? 'resultPending' : isSuccess ? 'resultTrue' : 'resultFalse'" [style]="'padding-top: 30px; padding-bottom: 30px'">
+      <div *ngIf="isSuccess === true">
+        <p>
+          Proceso realizado exitosamente
+        </p>
+      </div>
+      <div *ngIf="isSuccess === false">
+        <p>
+          Ocurrió un error al realizar el proceso
+        </p>
+      </div>
+      <div *ngIf="isSuccess === null">
+        <p>
+          Esperando resultado...
+        </p>
+      </div>
+    </div>
   </div>
 </ion-content>

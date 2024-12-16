@@ -25,3 +25,25 @@
 #container a {
   text-decoration: none;
 }
+
+.resultTrue p {
+  color: green !important;
+}
+
+.resultFalse p {
+  color: red !important;
+}
+
+.resultPending p {
+  color: yellow !important;
+}
+
+.resultPending ion-icon {
+  color: chocolate;
+}
+
+.center {
+  padding: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+}

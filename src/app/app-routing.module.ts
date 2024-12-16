@@ -11,6 +11,10 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'id-vs',
+    loadChildren: () => import('./id-vs/id-vs.module').then( m => m.IdVsPageModule)
+  },
 ];
 
 @NgModule({
