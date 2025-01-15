@@ -8,6 +8,7 @@ import { IdVisionComunicationService } from '../services/id-vision/id-vision-com
 import { IonHeader, IonTitle, IonToolbar, IonContent } from "@ionic/angular/standalone";
 import { EventService } from '../services/events/event.service';
 import { IdVisionComponent, SdkCommunicationService } from 'meta-g';
+import { Capacitor } from '@capacitor/core';
 
 
 @Component({
@@ -32,7 +33,7 @@ export class IdVsPage implements OnInit {
       console.log('Datos recibidos:', data);
       if (data) {
         this.dpiNumber = data.dpi;
-        this.cdr.detectChanges();
+        // this.cdr.detectChanges();
         console.log('dpi: ', this.dpiNumber);
       }
     });
@@ -52,8 +53,10 @@ export class IdVsPage implements OnInit {
 
 
   async ngAfterViewInit() {
-    if (this.isAndroid || this.isIOS) {
-      await this.requestPermissions();
+    if(Capacitor.getPlatform() !== 'web') {
+      if (this.isAndroid || this.isIOS) {
+        await this.requestPermissions();
+      }
     }
   }
 
