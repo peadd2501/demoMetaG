@@ -24,6 +24,19 @@ export class IdVsPage implements OnInit {
 
   private isAndroid: boolean;
   private isIOS: boolean;
+
+  //Conexion de akisi
+  // connectionString: string = '67abb4f11b7efa02f9a60aac';
+  // apiKeyString: string = 'metaG-LhV9FNbtlW6P2C6XQypOmh2Vgo6avJSr8UyLoHCRNB8lJb9mTa30AhaVIw4nPmFQOLtOp8wYA3GjjfSICCsqVfmrjN8uNzrbQcIr0bTYtTpFqQ7BasqDRGSasWuGphL1mKDFEz3FGJ6yetYu';
+
+  //Validacion video selfie y dpi's
+  connectionString: string = '67c22c4a3cb3e9262a3e3e27';
+  apiKeyString: string = 'metaG-r3loXTqLFr3tXVJ2TZNb3TixKiDi3c4WDxy0so4GvXYMfu9vKwAPZJmxgiIJHbnpo24vK5MEcIVzGCa5AtuScizemceMIMfnH5NTEy84UA6WIcMJzadvHZAwBsF5krZyvSBbcKRW8PpSQWBl';
+
+  //Validacion solo dpi's
+  // connectionString: string = '67c231033cb3e9262a3e3e2a';
+  // apiKeyString: string = 'metaG-79lnp8ws6IJnThckyhdPRpIQ9pKKd43tImbqNCaNxTvLdD4ar9ajktnkMnQt9kgrIUKYWvTqL5kk18BFSI7Lu83DpxE5OsXaG53ohrP0MW4S5unyd26nAZI4FugGrTW4T8VEMitSK4viCpRS';
+
   constructor( private sdkCommunicationService: SdkCommunicationService, private eventService: EventService, private platform: Platform, private idVisionComunicationService: IdVisionComunicationService, private cdr: ChangeDetectorRef) { 
     this.isAndroid = this.platform.is('android');
     this.isIOS = this.platform.is('ios');
