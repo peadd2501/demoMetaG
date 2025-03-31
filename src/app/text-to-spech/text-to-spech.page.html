@@ -1,0 +1,26 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>text-to-spech</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">text-to-spech</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div class="text-container">
+    <!-- Mostrar las palabras como subtítulos -->
+    <p class="subtitle">
+      <span *ngFor="let word of words; let i = index" class="subtitle-word">
+        {{ word }} 
+      </span>
+    </p>
+  </div>
+  <div class="button-container">
+    <ion-button class="custom-button" [disabled]="isSpeaking" (click)="speakText()">Iniciar Lectura</ion-button>
+  </div>
+
+</ion-content>

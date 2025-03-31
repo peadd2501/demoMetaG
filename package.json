@@ -14,9 +14,10 @@
   "private": false,
   "dependencies": {
     "@capacitor-community/screen-brightness": "^6.0.0",
+    "@capacitor-community/text-to-speech": "^6.0.0",
     "@capacitor/android": "6.1.2",
     "@capacitor/app": "6.0.1",
-    "@capacitor/camera": "^6.1.0",
+    "@capacitor/camera": "^6.1.2",
     "@capacitor/core": "6.1.2",
     "@capacitor/filesystem": "^6.0.1",
     "@capacitor/haptics": "6.0.1",
@@ -26,7 +27,7 @@
     "@ionic/angular": "^8.0.0",
     "@ionic/storage-angular": "^4.0.0",
     "ionicons": "^7.0.0",
-    "meta-g": "^1.0.483",
+    "meta-g": "^1.0.5032",
     "tslib": "^2.3.0"
   },
   "peerDependencies": {

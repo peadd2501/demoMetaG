@@ -7,6 +7,8 @@ PODS:
     - Capacitor
   - CapacitorCommunityScreenBrightness (6.0.0):
     - Capacitor
+  - CapacitorCommunityTextToSpeech (6.0.0):
+    - Capacitor
   - CapacitorCordova (6.1.2)
   - CapacitorFilesystem (6.0.2):
     - Capacitor
@@ -22,6 +24,7 @@ DEPENDENCIES:
   - "CapacitorApp (from `../../node_modules/@capacitor/app`)"
   - "CapacitorCamera (from `../../node_modules/@capacitor/camera`)"
   - "CapacitorCommunityScreenBrightness (from `../../node_modules/@capacitor-community/screen-brightness`)"
+  - "CapacitorCommunityTextToSpeech (from `../../node_modules/@capacitor-community/text-to-speech`)"
   - "CapacitorCordova (from `../../node_modules/@capacitor/ios`)"
   - "CapacitorFilesystem (from `../../node_modules/@capacitor/filesystem`)"
   - "CapacitorHaptics (from `../../node_modules/@capacitor/haptics`)"
@@ -37,6 +40,8 @@ EXTERNAL SOURCES:
     :path: "../../node_modules/@capacitor/camera"
   CapacitorCommunityScreenBrightness:
     :path: "../../node_modules/@capacitor-community/screen-brightness"
+  CapacitorCommunityTextToSpeech:
+    :path: "../../node_modules/@capacitor-community/text-to-speech"
   CapacitorCordova:
     :path: "../../node_modules/@capacitor/ios"
   CapacitorFilesystem:
@@ -53,12 +58,13 @@ SPEC CHECKSUMS:
   CapacitorApp: 0bc633b4eae40a1f32cd2834788fad3bc42da6a1
   CapacitorCamera: 9052bd3f464f135ba983feccd8ac1266272f0549
   CapacitorCommunityScreenBrightness: 250184917bd0738a681c026a9513e18ddb0cb49b
+  CapacitorCommunityTextToSpeech: 2564247444f4797a8ac9d322418e049c9b08a978
   CapacitorCordova: f48c89f96c319101cd2f0ce8a2b7449b5fb8b3dd
   CapacitorFilesystem: c832a3f6d4870c3872688e782ae8e33665e6ecbf
   CapacitorHaptics: fe689ade56ef20ec9b041a753c6da70c5d8ec9a9
   CapacitorKeyboard: 2700f9b18687be021e28b5a09b59eb151a46d5e0
   CapacitorStatusBar: b81d4fb5d4e0064c712018071b3ab4b810b39a63
 
-PODFILE CHECKSUM: ca5a98f2e10e6ca4536a6424ed40246ce31d784e
+PODFILE CHECKSUM: 075e1ed75f0f4859c412a0f5a14d8f04677d737f
 
 COCOAPODS: 1.16.2

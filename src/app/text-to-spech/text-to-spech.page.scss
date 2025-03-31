@@ -1,0 +1,30 @@
+.subtitle-word {
+    display: inline-block;
+    margin: 0 3px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-radius: 10px;
+
+  }
+  
+  .subtitle-word.highlight {
+    background-color: purple;
+    border-radius: 10px;
+    color: white;
+    padding: 2px;
+    text-decoration: bold;
+  }
+  
+  
+  .subtitle-word.read {
+    color: gray; /* Color para el texto ya leído */
+  }
+  
+.button-container {
+    justify-content: center;
+    display: flex;
+}
+
+.custom-button {
+    width: 80%;
+    border-radius: 10px !important;
+}

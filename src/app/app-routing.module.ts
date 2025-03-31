@@ -15,6 +15,14 @@ const routes: Routes = [
     path: 'id-vs',
     loadChildren: () => import('./id-vs/id-vs.module').then( m => m.IdVsPageModule)
   },
+  {
+    path: 'text-to-spech',
+    loadChildren: () => import('./text-to-spech/text-to-spech.module').then( m => m.TextToSpechPageModule)
+  },
+  {
+    path: 'test-camara',
+    loadChildren: () => import('./test-camara/test-camara.module').then( m => m.TestCamaraPageModule)
+  },
 ];
 
 @NgModule({

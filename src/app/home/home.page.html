@@ -23,6 +23,12 @@
     </div>
     
     <ion-button (click)="openSDK()">Abrir MetaG</ion-button>
+    <ion-button (click)="openAcuerdoVideo()">Abrir Acuerdo</ion-button>
+    <br/>
+    <ion-button (click)="openTTS()">Abrir TTS</ion-button>
+    <ion-button (click)="openVideoSelfie()">Abrir simple acuerdo</ion-button>
+    <br/>
+    <ion-button (click)="openCamara()">Abrir test camara</ion-button>
     <div [ngClass]="isSuccess === null ? 'resultPending' : isSuccess ? 'resultTrue' : 'resultFalse'" [style]="'padding-top: 30px; padding-bottom: 30px'">
       <div *ngIf="isSuccess === true">
         <p>

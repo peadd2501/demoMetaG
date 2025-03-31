@@ -1,0 +1,103 @@
+<ion-content color="light" class="custom-content">
+  <div *ngIf="isLoading" class="loading-overlay">
+    <ion-spinner name="crescent"></ion-spinner>
+  </div>
+  
+  <div *ngIf="countdown > 0" class="countdown-overlay">
+    <div class="countdown">{{ countdown }}</div>
+  </div>
+  <ion-header class="ion-no-border">
+    <ion-toolbar color="light">
+      <!-- <ion-title class="centered-title">Video Selfie</ion-title> -->
+      <ion-buttons slot="end">
+        <ion-button (click)="closeOverlayVideo()" [disabled]="!canStopRecording">
+          <ion-icon name="close"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+  <div class="main-header">
+    <div class="main-title">
+      <h1>Acuerdo de Video</h1>
+    </div>
+    <div class="acuerdo-text">
+      <p>Contesta únicamente "Sí" si estás de acuerdo con el crédito y contesta "No" para cancelar el proceso.</p>
+    </div>
+  </div>
+  <!-- Contenedor de la cámara y progresión -->
+  <div class="camera-container">
+    <div class="video-wrapper">
+      <video #videoElement muted autoplay playsinline style="transform: scaleX(-1)"></video>
+      <svg class="progress-ring" #progressRing width="300" height="300">
+        <circle class="progress-ring__circle" cx="150" cy="150" r="150" />
+      </svg>
+    </div>
+    <ion-label [ngClass]="{'red': isRecording}">00:{{ timeRemaining < 10 ? '0' + timeRemaining : timeRemaining
+        }}</ion-label>
+
+    <div class="text-container" *ngIf="showTextAcuerdo">
+      <!-- Mostrar las palabras como subtítulos -->
+      <p class="subtitle">
+        <span *ngFor="let word of words; let i = index" class="subtitle-word">
+          {{ word }} 
+        </span>
+      </p>
+    </div>
+        <!-- <p class="text-center">Permanece quieto, con tu rostro en el centro del circulo</p> -->
+
+        
+      <!-- Botones de grabación -->
+      <div class="fixed-footer">
+        <ion-button *ngIf="!isRecording" size="large" expand="block" (click)="recordVideo()" shape="round"><ion-icon slot="icon-only" name="camera-outline"></ion-icon></ion-button>
+        <ion-button *ngIf="isRecording" size="large" expand="block" (click)="stopRecording()" [disabled]="!canStopRecording"><ion-icon slot="icon-only" name="stop-outline"></ion-icon></ion-button>
+      </div>
+  </div>
+
+  <ion-modal id="example-modal" [isOpen]="isModalOpen" (didDismiss)="closeModal()">
+    <ng-template>
+      <div class="full-content">     
+        <div class="modal-content">
+          <img src="https://placeholder.pics/svg/150x150" alt="">
+          <h2>Instrucciones</h2>          
+          <!-- Subtítulos dinámicos y TTS -->
+          <div class="subtitle">
+            <span *ngFor="let word of instructionWords; let i = index" class="subtitle-word">
+              {{ word }}
+            </span>
+          </div>
+          <div class="button-container">
+            <ion-button (click)="closeModal()" [disabled]="isSpeaking">Comenzar</ion-button>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </ion-modal>
+
+  <ion-modal id="voice-modal" [isOpen]="isModalVoiceOpen" (didDismiss)="closeModalVoice()">
+    <ng-template>
+      <div class="full-content">
+        <div class="modal-content-2">
+          <div class="modal-header">
+            <ion-icon name="mic" size="large" style="width: 50px !important; height: 50px !important;"></ion-icon>
+          </div>
+          <div class="modal-body">
+            <p>Contesta con tu voz</p>
+            <div class="icons-container">
+              <div class="custom-text">
+                <p>Sí</p>
+              </div>
+              <div class="o-text">
+                <p>o</p>
+              </div>
+              <div class="custom-text">
+                <p>No</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </ng-template>
+  </ion-modal>
+</ion-content>

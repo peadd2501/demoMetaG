@@ -1,0 +1,32 @@
+<ion-content class="video-container">
+  <div *ngIf="countdown > 0" class="countdown-overlay">
+    <div class="countdown">{{ countdown }}</div>
+  </div>
+
+  <video #videoElement autoplay muted playsinline></video>
+
+  <div class="overlay">
+    <div class="overlay-text">
+      <p *ngIf="!isRecording">Toca 'Inicia la grabación' cuando estés listo</p>
+      <p *ngIf="isRecording" class="recording-text">
+        Grabando...
+      </p>
+      <div *ngIf="isRecording" class="icon-text"><ion-icon size="small" name="radio-button-on-outline"></ion-icon></div>
+    </div>
+    <div class="close-button">
+      <ion-icon name="close-outline" (click)="closeOverlayVideo()"></ion-icon>
+    </div>
+
+
+    <div class="button-container">
+      <p class="instruction-text-1">Repite el siguiente texto</p>
+      <p class="recording-timer" *ngIf="isRecording">00:{{ timeRemaining < 10 ? '0' + timeRemaining : timeRemaining }}</p>
+      <p class="instruction-text">Acepto los términos y condiciones del crédito que estoy solicitando en Fundación Génesis Empresarial</p>
+
+      <ion-button *ngIf="!isRecording" expand="block" (click)="recordVideo()">Iniciar Grabación</ion-button>
+      <ion-button *ngIf="isRecording && timeRemaining <= 5" expand="block" (click)="stopRecording()">
+        Detener Grabación
+      </ion-button>
+    </div>
+  </div>
+</ion-content>
