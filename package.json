@@ -27,7 +27,7 @@
     "@ionic/angular": "^8.0.0",
     "@ionic/storage-angular": "^4.0.0",
     "ionicons": "^7.0.0",
-    "meta-g": "^1.0.5032",
+    "meta-g": "^1.0.5035",
     "tslib": "^2.3.0"
   },
   "peerDependencies": {

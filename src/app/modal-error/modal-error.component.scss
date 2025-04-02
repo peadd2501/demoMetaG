@@ -1,0 +1,92 @@
+.custom-modal-content {
+    --background: transparent; // Para que el fondo del ion-content sea transparente
+  }
+  
+  /* Contenedor principal del modal */
+  .modal-wrapper {
+    background-color: #fff;
+    margin: auto;
+    margin-top: 50%;
+    width: 80%;
+    max-width: 320px;
+    border-radius: 8px;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  }
+  
+  /* Estilos para el ícono */
+  .modal-icon {
+    font-size: 3rem;
+    color: #F8AA00; /* Color naranja/amarillo que se ve en tu captura */
+    margin-bottom: 8px;
+  }
+  
+  /* Título */
+  .modal-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 8px;
+  }
+  
+  /* Mensaje */
+  .modal-message {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 16px;
+  }
+  
+/* Estilos para la lista de errores */
+.error-list {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-bottom: 16px;
+    text-align: left;
+    color: #666;
+    font-size: 1rem;
+  }
+  
+  .error-list li {
+    margin-bottom: 8px;
+  }
+  /* Botón */
+  .modal-button {
+    // --background: #F8AA00; /* Mismo color del ícono */
+    // --color: #fff;
+    // --border-radius: 4px;
+        //   max-width: 300px; // anteriormente 300
+        width: auto;
+        margin: 0 auto;
+        background-color: #ffcc00;
+        color: #ffffff;
+        font-weight: bold;
+        border-radius: 20px;
+    
+        --background: var(--orange-primary);
+        --background-hover: var(--orange-secondary);
+        --background-activated: var(--orange-secondary);
+        --background-focused: var(--orange-secondary);
+      
+        --color: var(--orange-primary);
+      
+        --border-radius: 20px;
+        --border-color: var(--orange-primary);
+        --border-style: solid;
+        --border-width: 1px;
+      
+        --box-shadow: 0 2px 6px 0 rgb(0, 0, 0, 0.25);
+      
+        --ripple-color: var(--orange-secondary);
+      
+    
+        &:hover {
+          background-color: #ffb300;
+        }
+    
+        &:active {
+          background-color: #e6a800;
+        }
+      
+  }
+  

@@ -6,6 +6,7 @@ import { EventService } from '../services/events/event.service';
 import { ModalController } from '@ionic/angular';
 import { CamaraAcuerdoVideoComponent } from '../camara-acuerdo-video/camara-acuerdo-video.component';
 import { SimpleAcuerdoVideoComponent } from '../simple-acuerdo-video/simple-acuerdo-video.component';
+import { ModalErrorComponent } from '../modal-error/modal-error.component';
 
 
 @Component({
@@ -101,4 +102,22 @@ export class HomePage {
     return `${maxLength - inputLength} caracteres pendientes`;
   }
 
+
+  async showErrorModal() {
+    const modal = await this.modalController.create({
+      component: ModalErrorComponent,
+      componentProps: {
+        title: 'Documento incorrecto',
+        errors: [
+          'El número de DPI es incorrecto.',
+          'El formato de la imagen no es válido.'
+        ],
+        variant: 'video'
+      },
+      cssClass: 'custom-modal-class', 
+      backdropDismiss: false
+    });
+    await modal.present();
+  }
+  
 }

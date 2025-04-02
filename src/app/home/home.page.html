@@ -29,6 +29,7 @@
     <ion-button (click)="openVideoSelfie()">Abrir simple acuerdo</ion-button>
     <br/>
     <ion-button (click)="openCamara()">Abrir test camara</ion-button>
+    <ion-button (click)="showErrorModal()">Abrir modaaaal</ion-button>
     <div [ngClass]="isSuccess === null ? 'resultPending' : isSuccess ? 'resultTrue' : 'resultFalse'" [style]="'padding-top: 30px; padding-bottom: 30px'">
       <div *ngIf="isSuccess === true">
         <p>

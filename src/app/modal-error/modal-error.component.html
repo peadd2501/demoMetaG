@@ -1,0 +1,39 @@
+<ion-content class="custom-modal-content">
+  <div class="modal-wrapper">
+    <!-- SVG dinámico según la variante -->
+    <ng-container [ngSwitch]="variant">
+      <ng-container *ngSwitchCase="'dpi'">
+        <!-- Aquí colocas el SVG para DPI -->
+        <img src="assets/icons/dpi-error.svg" alt="Icono DPI" class="modal-icon">
+      </ng-container>
+      <ng-container *ngSwitchCase="'video'">
+        <!-- Aquí colocas el SVG para Video -->
+        <img src="assets/icons/video-error.svg" alt="Icono Video" class="modal-icon">
+      </ng-container>
+      <ng-container *ngSwitchDefault>
+        <!-- Opción por defecto, en caso de que la variante no sea válida -->
+        <img src="assets/icons/dpi-error.svg" alt="Icono DPI" class="modal-icon">
+      </ng-container>
+    </ng-container>
+    <!-- Título -->
+    <h2 class="modal-title">{{ title }}</h2>
+
+    <!-- Mensaje -->
+    <!-- <p class="modal-message">{{ message }}</p> -->
+
+        <!-- Validación: muestra lista de errores si existen, sino mensaje simple -->
+        <div *ngIf="errorMessages && errorMessages.length > 0; else singleMessage">
+          <ul class="error-list">
+            <li *ngFor="let error of errorMessages">{{ error }}</li>
+          </ul>
+        </div>
+        <ng-template #singleMessage>
+          <p class="modal-message">{{ message }}</p>
+        </ng-template>
+        
+    <!-- Botón de cierre -->
+    <ion-button (click)="closeModal()" expand="block" class="modal-button">
+      Ok
+    </ion-button>
+  </div>
+</ion-content>
